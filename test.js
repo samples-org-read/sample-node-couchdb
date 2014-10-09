@@ -19,8 +19,8 @@ describe("Persistence", function () {
     superagent.get("http://localhost:3000/doobie")
       .end(function (e, res) {
         (e === null).should.equal(true);
-        var response = (res.text.indexOf("new") !== -1);
-        expect(response).to.equal(true);
+        var response = res.body;
+        expect(response.created).to.equal(true);
         done();
       });
   });
@@ -29,6 +29,8 @@ describe("Persistence", function () {
       .end(function (e, res) {
         (e === null).should.equal(true);
         var response = res.body;
+        expect(response.created).to.equal(false);
+        response = response.returnObj;
         response.should.have.property("name", "doobie");
         done();
       });
