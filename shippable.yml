@@ -23,7 +23,8 @@ before_script:
 # Running the tests with grunt
 script:
   - grunt
-  - echo $COMPARE_COMMIT
+  - echo $COMPARE_URL
+  - echo $LAST_SUCCESSFUL_BUILD_TIMESTAMP
 
 # Tell istanbul to generate a coverage report
 after_script:
