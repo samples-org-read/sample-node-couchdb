@@ -31,7 +31,7 @@ describe("Persistence", function () {
         var response = res.body;
         expect(response.created).to.equal(false);
         response = response.returnObj;
-        response.should.have.property("name", "doobie");
+        response.should.have.property("name", "dooie");
         done();
       });
   });
