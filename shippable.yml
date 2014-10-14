@@ -14,7 +14,8 @@ services:
 env:
   global:
   - XUNIT_FILE=shippable/testresults/result.xml
-  - secure: pHx5dR/qpqAnTJo5GCm7FUzD5YVvmB+y5YmcrGK09TQtBsi3d+p9dyf6V0DnsuJy8gIDS71YnDjbnycdqnKgGevjul4fQkWF+T52DvF49q5PbkDkqAbzo2HIr2VIOboutuhSy+FwlQb7aGjq9/AHTKlQSubFCjqvouB1uw7R9thsvUBnW/Ea+h39W4+0mzpLp9k6tmCAGkj/tGEMXgiZQvjX/3wvM45F3x5eGl+2bkxRELSr51NJAcBYC8+6k5svo6utNKQFhBE2HxFwpkJsJEh4oSOMf0GqWs0Vea7RRlA3lLJ116gQNKh7GuKLgxXN38w+GXPU8beIRZfHTpCHNw==
+  - secure: eHd8W6oPZ5x+yYmIrvrPh8EdON1J6Sdf0JthhAqWtisKJirbNbnnBsC6d4RlKUVPU20g1g66EvtJfzLJbihB2ZUfTqsI09Q/L4eDh+l3Gp1mWfvaL9YaVDID7pkVsBPFPw8mQtMzBf2AZeeWwM5ydrGO0yngUmUqDcy3oKDZzyyMw2aJKXJk1Wr1M9TGpGf/Rgvt59KyKY7yf8QN8l+Zsnc/IS5Lz2FgD2l4XUNSxbkSdZ0wFw2kV/9KidR7CpgO+GanZHtZCrUQRCVF4SC4djV4X9X34T9uQSSgFm10lmn37KXIYJN4YI7LrsQMMb2V0dUPDgDiTIKfOzs8o1cxnQ==
+  #- secure: pHx5dR/qpqAnTJo5GCm7FUzD5YVvmB+y5YmcrGK09TQtBsi3d+p9dyf6V0DnsuJy8gIDS71YnDjbnycdqnKgGevjul4fQkWF+T52DvF49q5PbkDkqAbzo2HIr2VIOboutuhSy+FwlQb7aGjq9/AHTKlQSubFCjqvouB1uw7R9thsvUBnW/Ea+h39W4+0mzpLp9k6tmCAGkj/tGEMXgiZQvjX/3wvM45F3x5eGl+2bkxRELSr51NJAcBYC8+6k5svo6utNKQFhBE2HxFwpkJsJEh4oSOMf0GqWs0Vea7RRlA3lLJ116gQNKh7GuKLgxXN38w+GXPU8beIRZfHTpCHNw==
   
 
 # Create directories for test and coverage reports
@@ -30,7 +31,7 @@ script:
 
 # Tell istanbul to generate a coverage report
 after_script:
-  - echo $test 
+  - echo $key
   - ./node_modules/.bin/istanbul cover grunt -- -u tdd
   - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/
 archive: true
